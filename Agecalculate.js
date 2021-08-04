@@ -1,5 +1,5 @@
 //Declaring values
-const persons = [    {firstName: 'Aayush', lastName: 'Shrestha', dob: '1986/09/23' },
+const persons = [   {firstName: 'Aayush', lastName: 'Shrestha', dob: '1986/09/23' },
                     { firstName: 'Amresh', lastName: 'Thakur', dob: '1997/03/11' },
                     { firstName: 'Bibin ', lastName: 'Maharjan', dob: '1996/02/02' },
                     { firstName: 'Kiran ', lastName: 'Ghimire ', dob: '2001/11/11' },
