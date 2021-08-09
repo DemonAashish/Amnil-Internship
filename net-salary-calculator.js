@@ -13,25 +13,30 @@ const taxSlabs = [
     { gt: 30000, lte: 9999999999, tax: 10},
 ];
 let netSalary=[];
+let gt=[];
+let lte=[];
+let tax=[];
 const grossSalary=details.grossSalary;
+for (j=0;j<taxSlabs.length;j++){
+    gt[j]=taxSlabs[j].gt;
+    lte[j]=taxSlabs[j].lte;
+    tax[j]=taxSlabs[j].tax; 
+}
 for(i=0;i<details.length;i++){
 const grossSalary=details[i].grossSalary; 
-     for (j=0;j<taxSlabs.length;j++){
-        let gt=taxSlabs[j].gt;
-        let lte=taxSlabs[j].lte;
-        let tax=taxSlabs[j].tax; 
+
         if (taxSlabs[0]){
-            netSalary=grossSalary-grossSalary*0.02;
+            netSalary=grossSalary-grossSalary*tax[0]/100;
         }
         else if(taxSlabs[1]){
-            netSalary=(10000-10000*0.02)-(grossSalary-10000)*0.04+(grossSalary-10000);
+            netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100-(grossSalary-lte)*0.04+(grossSalary-lte);
         }
         else if(taxSlabs[2]){
-            netSalary=(10000-10000*0.02)+(20000-10000)-(20000-10000)*0.04+(grossSalary-20000)-(grossSalary-20000)*0.07;
+            netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100+(lte[1]-gt[1])-(lte[1]-gt[1])*tax[1]/100+(grossSalary-lte)-(grossSalary-lte)*0.07;
         }
         else {
-            netSalary= (10000-10000*0.02)+(20000-10000)-(20000-10000)*0.04+10000-1000*0.07+ +(grossSalary-30000)-(grossSalary-30000)*0.1;
+            netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100+(lte[1]-gt[1])-(lte[1]-gt[1])*tax[1]/100+(lte[2]-gt[2])-(lte[2]-gt[2])*tax[2]/100 +(grossSalary-lte)-(grossSalary-lte)*0.1;
         }
-    }
+    
         console.log("Name: "+details[i].fullName+" Net Salary: "+netSalary);
 }
