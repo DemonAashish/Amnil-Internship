@@ -4,7 +4,7 @@ const details =[
     {fullName:'Jane Doe', grossSalary:'16500'},
     {fullName:'Jim Doe', grossSalary:'24999'},
     {fullName:'Josh Doe', grossSalary:'37000'},
-    {fullName:'Aashish Upreti',grossSalary:'10000000000'} //wish
+    {fullName:'Josh Doe', grossSalary:'32424'}
 ];
 //Tax Slabs
 const taxSlabs = [
