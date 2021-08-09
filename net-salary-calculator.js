@@ -15,22 +15,23 @@ const taxSlabs = [
 let netSalary=[];
 const grossSalary=details.grossSalary;
 for(i=0;i<details.length;i++){
-     const grossSalary=details[i].grossSalary;
-     for(j=0;j<taxSlabs.length;j++){
-        switch( taxSlabs[j]){
-        case taxSlabs[0]:
+const grossSalary=details[i].grossSalary; 
+     for (j=0;j<taxSlabs.length;j++){
+        let gt=taxSlabs[j].gt;
+        let lte=taxSlabs[j].lte;
+        let tax=taxSlabs[j].tax; 
+        if (taxSlabs[0]){
             netSalary=grossSalary-grossSalary*0.02;
-            break;
-        case taxSlabs[1]:
+        }
+        else if(taxSlabs[1]){
             netSalary=(10000-10000*0.02)-(grossSalary-10000)*0.04+(grossSalary-10000);
-            break;
-        case  taxSlabs[2]:
+        }
+        else if(taxSlabs[2]){
             netSalary=(10000-10000*0.02)+(20000-10000)-(20000-10000)*0.04+(grossSalary-20000)-(grossSalary-20000)*0.07;
-            break;
-        default: 
-            netSalary=   (10000-10000*0.02)+(20000-10000)-(20000-10000)*0.04+10000-1000*0.07+ +(grossSalary-30000)-(grossSalary-30000)*0.1;
-            break;
-}}
- console.log("Name: "+details[i].fullName+" Net Salary: "+netSalary);
+        }
+        else {
+            netSalary= (10000-10000*0.02)+(20000-10000)-(20000-10000)*0.04+10000-1000*0.07+ +(grossSalary-30000)-(grossSalary-30000)*0.1;
+        }
+    }
+        console.log("Name: "+details[i].fullName+" Net Salary: "+netSalary);
 }
-
