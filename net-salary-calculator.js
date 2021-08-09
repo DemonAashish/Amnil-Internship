@@ -3,7 +3,8 @@ const details =[
     {fullName:'John Doe', grossSalary:'9500'},
     {fullName:'Jane Doe', grossSalary:'16500'},
     {fullName:'Jim Doe', grossSalary:'24999'},
-    {fullName:'Josh Doe', grossSalary:'37000'}
+    {fullName:'Josh Doe', grossSalary:'37000'},
+    {fullName:'Aashish Upreti',grossSalary:'10000000000'} //wish
 ];
 //Tax Slabs
 const taxSlabs = [
@@ -29,7 +30,7 @@ const grossSalary=details[i].grossSalary;
             netSalary=grossSalary-grossSalary*tax[0]/100;
         }
         else if(taxSlabs[1]){
-            netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100-(grossSalary-lte)*0.04+(grossSalary-lte);
+            netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100-(grossSalary-lte)*tax/100+(grossSalary-lte);
         }
         else if(taxSlabs[2]){
             netSalary=(lte[0]-gt[0])-(lte[0]-gt[0])*tax[0]/100+(lte[1]-gt[1])-(lte[1]-gt[1])*tax[1]/100+(grossSalary-lte)-(grossSalary-lte)*0.07;
