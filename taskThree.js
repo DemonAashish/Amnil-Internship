@@ -39,6 +39,29 @@ console.log(flattened);
 
 //Ex.3: End
 
+//Ex.4: Objects
+let providedObject = {1: { fullName:'John Doe'}, 2: {fullName:'Jim Doe'}, 3: {fullName:'Jane Doe'} };
+let result =Object.keys(providedObject).map((key) => [id=Number(key), providedObject[key]]);
+console.log(result);
+
+//Ex.4 End
+
+//Ex.5: Displacement 
+let diff=[];
+let displace=0;
+const points = { 
+    p1: [2, 3],
+    p2: [6, 7],
+    get displacement(){
+        for(i=0; i<2; i++){
+            diff[i]=this.p2[i]-this.p1[i]
+        }
+        displace=Math.sqrt(diff[1]**2+diff[0]**2);
+        return displace;
+      }
+  };
+  console.log(points.displacement);
+  //Ex.5: End
 
 //Ex.6: Constructor
 function Person () {
