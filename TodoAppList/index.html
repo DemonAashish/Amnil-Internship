@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>   
+    <div class="header">
+        <h1>My To Do list</h1>
+        <form>
+            <input type="text" id="myInput" placeholder="Todo work...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </form>
+    </div>
+        <ul id="myUL"> 
+            <li>Eat Rice</li>
+            <li>Sleep</li>
+            <li>Sleep</li>
+        </ul>
+    <button type="button" class="clear-list" onclick="removeAll()">clear all</button>
+
+    <script src="todo.js"></script>
+</body>
+</html>
