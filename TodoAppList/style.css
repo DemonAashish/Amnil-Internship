@@ -23,7 +23,7 @@ form{
     align-items: center;
     
 }
-form >input{
+form > input{
     width: 60%;
     height: 40px;
     margin-left: 1rem;
