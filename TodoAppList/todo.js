@@ -53,6 +53,22 @@ function removeAll(){
   const lst = document.getElementsByTagName("ul");
     lst[0].innerHTML = "";
 }
+//searching 
+function searchFun(){
+  var filter=document.getElementById('searchBar').value.toUpperCase();
+  var ul=document.getElementById('myUL');
+  var li=ul.getElementsByTagName('li');
+  let txtValue;
+  for(i=0;i<li.length;i++){
+    txtValue=li[i].innerHTML||li[i].textContent;
+    if(txtValue.toUpperCase().indexOf(filter)>-1){
+      li[i].style.display="";
+    }else{
+      li[i].style.display="none";
+    }
+
+  }
+}
 //local Storage
 function saveLocal(todo){
   let todos;
