@@ -16,18 +16,35 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
-// checked
-const list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+
+
+//time
+
+const recentDate=new Date();
+let time=recentDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+let startTime=(document.getElementById("startTime").value);
+let endTime=document.getElementById("endTime").value;
+ if(startTime<=time<=endTime){
+  const list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+}
+
+
+
 //new list item 
 function newElement() {
     const li = document.createElement("li");
     const inputValue = document.getElementById("myInput").value;
-    const t = document.createTextNode(inputValue);
+    // const startTime=(document.getElementById("startTime").value);
+    // const endTime=document.getElementById("endTime").value;
+    const va=`${inputValue} `;
+    // ${startTime} ${endTime}
+    //start: ${startDate} end:${endDate}
+    const t = document.createTextNode(va);
     li.appendChild(t);
     if (inputValue === '') {
       alert("Enter toDo task");
@@ -38,7 +55,7 @@ function newElement() {
     const span = document.createElement("SPAN");
     const txt = document.createTextNode("\u00D7");
     span.className = "close";
-    saveLocal(inputValue);
+    saveLocal(va);
     span.appendChild(txt);
     li.appendChild(span);
     for (i = 0; i < close.length; i++) {
@@ -110,5 +127,16 @@ function displayTodo(){
     }
   });
 }
-
+// remove todos
+// function removeTodo(todo){
+//   let todos;
+//   if (localStorage.getItem("todos")===null){
+//     todos=[];
+//   }else{
+//     todos=JSON.parse(localStorage.getItem("todos"));
+//   }
+//   const todoIndex=todo.children[0].innerText;
+//   todos.splice(todos.indexOf(todoIndex),1);
+//   localStorage.setItem("todos",JSON.stringify(todos));
+// }
 

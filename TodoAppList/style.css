@@ -8,7 +8,7 @@ body{
     margin: auto;
     padding: auto;
     width: 50%;
-    height: 60vh;
+    height: fit-content;
     margin-top:15vh;
     border-radius: 10px
 }
@@ -21,14 +21,16 @@ form{
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     
 }
-form > input{
+#myInput{
     width: 60%;
     height: 40px;
     margin-left: 1rem;
     border-radius: 10px;
     outline: none;
+    border: none;
     background-color: whitesmoke;
     margin-right: 1rem;
 }
@@ -71,4 +73,14 @@ ul li.checked {
     margin-left: 40%;
     cursor: pointer;
     justify-content: center;
+    margin-bottom: 0.5rem;
+}
+#searchBar{
+    width: 95%;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    outline: none;
+    border: none;
+    background: whitesmoke;
 }

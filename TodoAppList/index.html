@@ -10,12 +10,15 @@
 <body>   
     <div class="header">
         <h1>My To Do list</h1>
-        <input id="searchBar" type="text" onkeyup="searchFun()" placeholder="Search todo">
         <form>
             <input type="text" id="myInput" placeholder="Todo work...">
-            <!-- <input type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}"> -->
+            <div>
+            <p>Start time <input type="time" id="startTime"  ></p>
+            <p>End time <input type="time" id="endTime" ></p>
+            </div>
             <span onclick="newElement()" class="addBtn">Add</span>
         </form>
+        <input id="searchBar" type="text" onkeyup="searchFun()" placeholder="Search todo">
     </div>
         <ul id="myUL"> 
             <li>Sleep</li>
